@@ -43,14 +43,14 @@ font-size: 25px;
 	<%@include file="/includes/navbar.jsp"%>
 
 	<div class="container my-3">
-		<div class="d-flex py-3 row justify-content-end"><h3>Total Price: Rs. ${(total>0)?dcf.format(total):0} </h3> <a class="mx-3 btn btn-primary" href="login.jsp">Check Out</a></div>
+		<div class="d-flex py-3 row justify-content-end"><h3>Total Price: Br. ${(total>0)?dcf.format(total):0} </h3> <a class="mx-3 btn btn-primary" href="login.jsp">Check Out</a></div>
 		<br>
 		<table class="table table-light">
 			<thead>
 				<tr>
 					<th scope="col">Name</th>
 					<th scope="col"class="text-center">Category</th>
-					<th scope="col"class="text-center">Price(Rs)</th>
+					<th scope="col"class="text-center">Price(Birr)</th>
 					<th scope="col"class="text-center">Buy Now</th>
 					<th scope="col"class="text-center">Cancel</th>
 				</tr>
