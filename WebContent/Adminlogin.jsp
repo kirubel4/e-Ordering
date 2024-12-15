@@ -79,7 +79,7 @@
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
               <img 
-                src="WebContent/images/admin_branding.jpg" 
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp" 
                 alt="login form" 
                 class="img-fluid full-image" 
                 style="border-radius: 1rem 0 0 1rem;" />
