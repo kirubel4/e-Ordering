@@ -16,3 +16,6 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## To run the project in visual studio code you should frist create a war file and open that war file in tomcat server(after starting the server, right click on the war file created, and select run on tomcat option) and open it in a browrser by right clicking on the tomcat server. 
+You can run this command to create a war file(below is my war file creator command)
+jar -cvf your-project.war -C WebContent/ .
