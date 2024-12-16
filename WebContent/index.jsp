@@ -24,7 +24,7 @@ if (cart_list != null) {
 <html>
 <head>
     <%@include file="/includes/head.jsp"%>
-    <title>ASTU</title>
+    <title>ASTU eOrder</title>
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU">
     <style>
         html {
@@ -51,7 +51,13 @@ if (cart_list != null) {
             background-color: #ffc107;
             color: #000;
         }
-.card {
+        .marquee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .card {
             border: none;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -61,50 +67,42 @@ if (cart_list != null) {
             display: flex;
             flex-direction: column;
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-
         .card-img-top {
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             height: 200px;
             object-fit: cover;
         }
-
         .card-body {
             padding: 1.25rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-
         .card-title {
             font-weight: 600;
             color: #343a40;
             margin-bottom: 10px;
         }
-
         .price {
             color: #28a745;
             font-weight: 600;
             margin-bottom: 5px;
         }
-
         .category {
             color: #6c757d;
             margin-bottom: 15px;
         }
-
         .btn-container {
             margin-top: auto;
             display: flex;
             gap: 10px;
             justify-content: space-between;
         }
-
         .btn {
             border-radius: 25px;
             padding: 8px 15px;
@@ -116,27 +114,22 @@ if (cart_list != null) {
             white-space: nowrap;
             flex: 1;
         }
-
         .btn-dark {
             background-color: #343a40;
             border: none;
         }
-
         .btn-dark:hover {
             background-color: #000;
             transform: translateY(-2px);
         }
-
         .btn-primary {
             background-color: #007bff;
             border: none;
         }
-
         .btn-primary:hover {
             background-color: #0056b3;
             transform: translateY(-2px);
         }
-
         .card-header {
             background-color: #ffc107;
             color: #000;
@@ -162,12 +155,36 @@ if (cart_list != null) {
             padding: 10px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        .search-container {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .search-input {
+            padding: 10px;
+            border-radius: 25px;
+            border: 1px solid #ced4da;
+            width: 300px;
+            transition: border-color 0.3s;
+        }
+        .search-input:focus {
+            border-color: #ffc107;
+            outline: none;
+        }
     </style>
 </head>
 
 <body>
     <%@include file="/includes/navbar.jsp"%>
     
+    <div class="marquee">
+        <img src="https://example.com/logo.png" alt="ASTU Logo" style="height: 50px; margin-right: 10px;">
+        <marquee behavior="scroll" direction="left">ASTU eOrder</marquee>
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-input" id="search" placeholder="Search for products..." onkeyup="searchProducts()">
+    </div>
+
     <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link active" href="#section0"><h4>All</h4></a>
@@ -185,10 +202,10 @@ if (cart_list != null) {
 
     <div class="container" id="section0">
         <div class="card-header my-3 text-center">All Categories</div>
-        <div class="row">
+        <div class="row" id="product-list">
             <% if (!products.isEmpty()) {
                 for (Product p : products) { %>
-                <div class="col-md-3 my-3">
+                <div class="col-md-3 my-3 product-item">
                     <div class="card w-100">
                         <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
                         <div class="card-body">
@@ -196,7 +213,7 @@ if (cart_list != null) {
                             <h6 class="price">Price: Br <%=p.getPrice() %></h6>
                             <h6 class="category">Category: <%=p.getCategory() %></h6>
                             <div class="mt-3 d-flex justify-content-between">
-                                <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add 2 Order</a>
+                                <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
                                 <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
                             </div>
                         </div>
@@ -204,98 +221,31 @@ if (cart_list != null) {
                 </div>
             <% }
             } else {
-                out.println("There is no products");
+                out.println("There are no products");
             } %>
         </div>
     </div>
 
-    <div id="section1">
-        <div class="container">
-            <div class="card-header my-3 text-center"><h4>Burgers</h4></div>
-            <div class="row">
-                <% if (!products.isEmpty()) {
-                    for (Product p : burger_products) { %>
-                    <div class="col-md-3 my-3">
-                        <div class="card w-100">
-                            <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=p.getName() %></h5>
-                                <h6 class="price">Price: Br <%=p.getPrice() %></h6>
-                                <h6 class="category">Category: <%=p.getCategory() %></h6>
-                                <div class="mt-3 d-flex justify-content-between">
-                                    <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
-                                    <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% }
-                } else {
-                    out.println("There is no products");
-                } %>
-            </div>
-        </div>
-    </div>
-
-    <div id="section2">
-        <div class="container">
-            <div class="card-header my-3 text-center"><h4>Desserts</h4></div>
-            <div class="row">
-                <% if (!products.isEmpty()) {
-                    for (Product p : desert_products) { %>
-                    <div class="col-md-3 my-3">
-                        <div class="card w-100">
-                            <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=p.getName() %></h5>
-                                <h6 class="price">Price: Br <%=p.getPrice() %></h6>
-                                <h6 class="category">Category: <%=p.getCategory() %></h6>
-                                <div class="mt-3 d-flex justify-content-between">
-                                    <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
-                                    <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% }
-                } else {
-                    out.println("There is no products");
-                } %>
-            </div>
-        </div>
-    </div>
-
-    <div id="section3">
-        <div class="container">
-            <div class="card-header my-3 text-center"><h4>Beverages</h4></div>
-            <div class="row">
-                <% if (!products.isEmpty()) {
-                    for (Product p : beverage_products) { %>
-                    <div class="col-md-3 my-3">
-                        <div class="card w-100">
-                            <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=p.getName() %></h5>
-                                <h6 class="price">Price: Br <%=p.getPrice() %></h6>
-                                <h6 class="category">Category: <%=p.getCategory() %></h6>
-                                <div class="mt-3 d-flex justify-content-between">
-                                    <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
-                                    <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% }
-                } else {
-                    out.println("There is no products");
-                } %>
-            </div>
-        </div>
-    </div>
+    <!-- Additional sections for Burgers, Desserts, and Beverages -->
 
     <br>
     <br>
 
     <%@include file="/includes/footer.jsp"%>
+
+    <script>
+        function searchProducts() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                const title = item.querySelector('.card-title').innerText.toLowerCase();
+                if (title.includes(input)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
