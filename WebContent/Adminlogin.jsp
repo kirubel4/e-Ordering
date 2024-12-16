@@ -25,7 +25,7 @@
 <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU">
 <style>
   body {
-    background: linear-gradient(to right,rgb(73, 61, 206), #2575fc);
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     font-family: 'Roboto', sans-serif;
   }
   .card {
@@ -55,6 +55,23 @@
   .form-label {
     font-weight: 500;
   }
+  .logo {
+    width: 80px; /* Increased size */
+    height: 80px; /* Increased size */
+    border-radius: 50%; /* Circular logo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  .logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  .image-container {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  .image-container:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
 </style>
 </head>
 <body>
@@ -66,8 +83,10 @@
         <div class="card">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              <div class="image-container">
+                <img src="C:/Users/hana/Downloads/YumRide--Online-Food-Ordering-System-main/YumRide--Online-Food-Ordering-System-main/fine/WebContent/images/admin_branding.jpg"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
@@ -75,7 +94,7 @@
                 <form action="<%=request.getContextPath()%>/Adminlogin" method="post">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" class="logo">
                     <span class="h1 fw-bold mb-0">abc order</span>
                   </div>
 
