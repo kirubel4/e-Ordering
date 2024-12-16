@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,57 +25,121 @@
 <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU">
 <style>
   body {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: url("https://cdn.pixabay.com/photo/2024/05/06/17/06/french-fries-8743802_1280.jpg") no-repeat center center fixed;
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
+    perspective: 1000px;
   }
+  
   .card {
     border-radius: 1rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
   }
+
   .card:hover {
     transform: translateY(-10px);
   }
-  img {
-    transition: transform 0.3s;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    position: relative;
   }
-  img:hover {
-    transform: scale(1.05);
+
+  .logo:hover {
+    transform: 
+      rotateX(10deg) 
+      rotateY(10deg) 
+      scale(1.1);
+    box-shadow: 
+      -20px -20px 30px rgba(255, 255, 255, 0.5),
+      20px 20px 30px rgba(0, 0, 0, 0.3);
   }
+
+  .image-container {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  .image-container:hover {
+    transform: 
+      rotateY(-15deg) 
+      rotateX(5deg) 
+      scale(1.05);
+  }
+
+  .image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      rgba(255,255,255,0.2) 0%,
+      rgba(255,255,255,0) 100%
+    );
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover::after {
+    opacity: 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 
+      -10px -10px 20px rgba(255,255,255,0.3),
+      10px 10px 20px rgba(0,0,0,0.3);
+  }
+
   .btn-dark {
-    background-color: #343a40;
+    background-color: rgba(52, 58, 64, 0.9);
     border: none;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
+
   .btn-dark:hover {
-    background-color: #495057;
-    transform: scale(1.05);
+    background-color: rgba(73, 80, 87, 0.9);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   }
+
+  .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
   .form-label {
     font-weight: 500;
+    color: #343a40;
   }
-  .logo {
-    width: 80px; /* Increased size */
-    height: 80px; /* Increased size */
-    border-radius: 50%; /* Circular logo */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
+
+  .text-black {
+    color: rgba(0,0,0,0.8) !important;
   }
-  .logo:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-  }
-  .image-container {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-  }
-  .image-container:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+
+  .h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 </style>
 </head>
 <body>
-	
+    
 <section class="vh-75">
   <div class="container py-5 h-75">
     <div class="row d-flex justify-content-center align-items-center h-75">
@@ -84,8 +148,8 @@
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
               <div class="image-container">
-                <img src="C:/Users/hana/Downloads/YumRide--Online-Food-Ordering-System-main/YumRide--Online-Food-Ordering-System-main/fine/WebContent/images/admin_branding.jpg"
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                <img src="CSS/b8cc9fd74dfab4f06da503108808529c_LE_magic_x2_creativity_50_resemblance_25.jpg" 
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
               </div>
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -126,7 +190,49 @@
     </div>
   </div>
 </section>
+
 <!-- MDB -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+
+<script>
+  // Add 3D tilt effect to image container
+  const imageContainer = document.querySelector('.image-container');
+  imageContainer.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = imageContainer.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    
+    imageContainer.style.transform = `
+      perspective(1000px)
+      rotateY(${x * 20}deg)
+      rotateX(${-y * 20}deg)
+      scale3d(1.05, 1.05, 1.05)
+    `;
+  });
+
+  imageContainer.addEventListener('mouseleave', () => {
+    imageContainer.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+  });
+
+  // Add 3D effect to logo
+  const logo = document.querySelector('.logo');
+  logo.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = logo.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    
+    logo.style.transform = `
+      perspective(1000px)
+      rotateY(${x * 30}deg)
+      rotateX(${-y * 30}deg)
+      scale3d(1.1, 1.1, 1.1)
+    `;
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    logo.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
+  });
+</script>
+
 </body>
 </html>
