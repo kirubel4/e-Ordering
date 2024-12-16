@@ -24,7 +24,7 @@ if (cart_list != null) {
 <html>
 <head>
     <%@include file="/includes/head.jsp"%>
-    <title>ASTU eOrder</title>
+    <title>Abc Order</title>
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU">
     <style>
         html {
@@ -177,8 +177,8 @@ if (cart_list != null) {
     <%@include file="/includes/navbar.jsp"%>
     
     <div class="marquee">
-        <img src="https://example.com/logo.png" alt="ASTU Logo" style="height: 50px; margin-right: 10px;">
-        <marquee behavior="scroll" direction="left">ASTU eOrder</marquee>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="ASTU Logo" style="height: 150px; margin-right: 10px;">
+        <marquee behavior="scroll" direction="left">Not only food we provide, we also save your time and money! call us +251-953-775-288</marquee>
     </div>
 
     <div class="search-container">
@@ -187,7 +187,7 @@ if (cart_list != null) {
 
     <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="nav-link active" href="#section0"><h4>All</h4></a>
+            <a class="nav-link" href="#section0"><h4>All</h4></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#section1"><h4>Burgers</h4></a>

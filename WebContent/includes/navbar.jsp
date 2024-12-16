@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
-		<a class="navbar-brand" href="index.jsp"><h1>ASTU eOrder</h1></a>
+		<a class="navbar-brand" href="index.jsp"><h1>Abc Order</h1></a>
 		
 		
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
