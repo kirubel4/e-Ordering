@@ -38,7 +38,7 @@ if (cart_list != null) {
             color: #343a40;
             transition: all 0.3s ease;
             font-weight: 500;
-            padding: 15px 25px;
+            padding: 10px 15px; /* Reduced padding */
             margin: 0 5px;
             border-radius: 25px;
         }
@@ -56,6 +56,26 @@ if (cart_list != null) {
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            padding: 10px 0; /* Reduced padding */
+        }
+        .marquee img {
+            height: 100px; /* Reduced logo height */
+            margin-right: 10px;
+        }
+        .search-container {
+            margin: 10px 0;
+            text-align: center;
+        }
+        .search-input {
+            padding: 8px; /* Reduced padding */
+            border-radius: 25px;
+            border: 1px solid #ced4da;
+            width: 250px; /* Reduced width */
+            transition: border-color 0.3s;
+        }
+        .search-input:focus {
+            border-color: #ffc107;
+            outline: none;
         }
         .card {
             border: none;
@@ -155,21 +175,6 @@ if (cart_list != null) {
             padding: 10px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .search-container {
-            margin: 10px 0;
-            text-align: center;
-        }
-        .search-input {
-            padding: 10px;
-            border-radius: 25px;
-            border: 1px solid #ced4da;
-            width: 300px;
-            transition: border-color 0.3s;
-        }
-        .search-input:focus {
-            border-color: #ffc107;
-            outline: none;
-        }
     </style>
 </head>
 
@@ -177,7 +182,7 @@ if (cart_list != null) {
     <%@include file="/includes/navbar.jsp"%>
     
     <div class="marquee">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="ASTU Logo" style="height: 150px; margin-right: 10px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="ASTU Logo">
         <marquee behavior="scroll" direction="left">Not only food we provide, we also save your time and money! call us +251-953-775-288</marquee>
     </div>
 
@@ -227,6 +232,68 @@ if (cart_list != null) {
     </div>
 
     <!-- Additional sections for Burgers, Desserts, and Beverages -->
+    <div class="container" id="section1">
+        <div class="card-header my-3 text-center">Burgers</div>
+        <div class="row">
+            <% for (Product p : burger_products) { %>
+            <div class="col-md-3 my-3 product-item">
+                <div class="card w-100">
+                    <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=p.getName() %></h5>
+                        <h6 class="price">Price: Br <%=p.getPrice() %></h6>
+                        <div class="mt-3 d-flex justify-content-between">
+                            <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
+                            <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="container" id="section2">
+        <div class="card-header my-3 text-center">Desserts</div>
+        <div class="row">
+            <% for (Product p : desert_products) { %>
+            <div class="col-md-3 my-3 product-item">
+                <div class="card w-100">
+                    <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=p.getName() %></h5>
+                        <h6 class="price">Price: Br <%=p.getPrice() %></h6>
+                        <div class="mt-3 d-flex justify-content-between">
+                            <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
+                            <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="container" id="section3">
+        <div class="card-header my-3 text-center">Beverages</div>
+        <div class="row">
+            <% for (Product p : beverage_products) { %>
+            <div class="col-md-3 my-3 product-item">
+                <div class="card w-100">
+                    <img class="card-img-top" src="<%=p.getImage() %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=p.getName() %></h5>
+                        <h6 class="price">Price: Br <%=p.getPrice() %></h6>
+                        <div class="mt-3 d-flex justify-content-between">
+                            <a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a>
+                            <a class="btn btn-primary" href="order-now?quantity=1&id=<%=p.getId()%>">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
 
     <br>
     <br>
