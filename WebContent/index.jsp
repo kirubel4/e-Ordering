@@ -60,7 +60,7 @@ if (cart_list != null) {
         }
         .marquee img {
             height: 100px; /* Reduced logo height */
-            margin-right: 10px;
+            margin-right: 50px;
         }
         .search-container {
             margin: 10px 0;
@@ -172,7 +172,7 @@ if (cart_list != null) {
             top: 0;
             z-index: 1000;
             background-color: rgba(255,255,255,0.95);
-            padding: 10px 0;
+            padding: 5px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
     </style>

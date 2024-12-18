@@ -6,156 +6,174 @@
 <meta charset="ISO-8859-1">
 <title>Register</title>
 <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU">
-<!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
-  rel="stylesheet"
-/>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet"/>
 
 <style>
 .gradient-custom-3 {
-/* fallback for old browsers */
-background: #84fab0;
-
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
-}
-.gradient-custom-4 {
-/* fallback for old browsers */
-background: #84fab0;
-
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+    background: rgba(0, 0, 0, 0.4);
 }
 
+.card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-dark {
+    background: linear-gradient(45deg, #1a1a1a, #333333) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-dark:hover {
+    background: linear-gradient(45deg, #333333, #1a1a1a) !important;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.text-body {
+    color: #333 !important;
+}
+
+.card-body h2 {
+    background: linear-gradient(45deg, #1a1a1a, #333333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-check-label {
+    color: #555;
+}
+
+.footer-text {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-outline {
+    position: relative;
+    margin-bottom: 25px !important;
+}
+
+.form-label {
+    color: #555 !important;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.custom-background {
+    background-image: url('https://cdn.pixabay.com/photo/2024/05/06/17/06/french-fries-8743802_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
 </style>
 </head>
 <body>
-	
-<!-- 	<form action="insert" method="post"> -->
-<!-- 		Name <input type="text" name="name"><br> -->
-<!-- 		Email <input type="text" name="email"><br> -->
-<!-- 		Phone Number <input type="text" name="phone"><br> -->
-<!-- 		Delivery Address <input type="text" name="address"><br> -->
-<!-- 		User Name <input type="text" name="uid"><br> -->
-<!-- 		Password <input type="password" name="psw"><br> -->
-<!-- 		Your Role(Customer/Admin/Delivery Person)<input type="text" name="role"><br> -->
-		
-<!-- 		<input type="submit" name="submit" value="Create An Account"> -->
-<!-- 	</form> -->
-	
-	
-	
-	
-	<section class="vh-100 bg-image "
-  style="background-image: url('https://images.pexels.com/photos/16962424/pexels-photo-16962424/free-photo-of-street-food-menu-on-tray.jpeg?auto=compress&cs=tinysrgb&w=600');">
+
+<section class="vh-100 bg-image custom-background">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3 overflow-auto">
-    <div class="container h-100 p-4 ">
+    <div class="container h-100 p-4">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
+          <div class="card" style="border-radius: 25px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an Account</h2>
 
               <form action="insert" method="post">
-
-                <div class="form-outline mb-4">
+                <div class="form-outline">
                   <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="name" required/>
                   <label class="form-label" for="form3Example1cg">Your Name</label>
                 </div>
 
-                <div class="form-outline mb-4">
+                <div class="form-outline">
                   <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email" required/>
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
-                
-                
-                <div class="form-outline mb-4">
+
+                <div class="form-outline">
                   <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="phone" required/>
                   <label class="form-label" for="form3Example3cg">Your Phone Number</label>
                 </div>
-                
-                <div class="form-outline mb-4">
+
+                <div class="form-outline">
                   <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="address" required/>
                   <label class="form-label" for="form3Example3cg">Delivery Address</label>
                 </div>
-                
-                <div class="form-outline mb-4">
+
+                <div class="form-outline">
                   <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="uid" required/>
                   <label class="form-label" for="form3Example3cg">Username</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="psw" required />
+                <div class="form-outline">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="psw" required/>
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="role" required />
-                  <label class="form-label" for="form3Example4cdg">Role: Customer/Delivery Person/Admin</label>
+                <div class="form-outline">
+                  <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="role" required/>
+                  <label class="form-label" for="form3Example4cdg">Role: Customer/Delivery Person</label>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>
                   <label class="form-check-label" for="form2Example3g">
-                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                    I agree to all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                   </label>
                 </div>
 
                 <div class="d-flex justify-content-center">
-<!--                   <button type="button" -->
-<!--                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button> -->
-                    <input type="submit" name="submit" value="Create An Account" class="btn btn-dark btn-lg btn-block">
+                  <input type="submit" name="submit" value="Create An Account" class="btn btn-dark btn-lg btn-block">
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login.jsp"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
-
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login.jsp" class="fw-bold text-body"><u>Login here</u></a></p>
               </form>
-			
             </div>
-            
           </div>
         </div>
-       	<br><br>
-       	<hr>
-        <h4><center>Taste in Your FingerTips</center></h4>
-        <h5><center>ASTU eOrder</center></h5>
-        <hr>
+        <div class="footer-text text-center mt-4">
+          <h4>Save your time!</h4>
+          <h5>Abc Order</h5>
+        </div>
       </div>
     </div>
   </div>
-  	
 </section>
-	
-	
-	
-	
-	
-	
-	
-<!-- MDB -->
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
-></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
 </body>
 </html>
-
