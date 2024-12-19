@@ -106,16 +106,16 @@
   }
 
   .btn-dark {
-    background-color: rgba(52, 58, 64, 0.9);
+    background: linear-gradient(135deg, #007bff, #00bcd4);
     border: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 
   .btn-dark:hover {
-    background-color: rgba(73, 80, 87, 0.9);
+    background: linear-gradient(135deg, #0056b3, #008ba3);
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.4);
   }
 
   .form-control {

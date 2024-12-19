@@ -95,13 +95,11 @@
   font-family: montserrat;
 }
 nav{
-  background: #0082e6;
+  background: linear-gradient(135deg, #007bff, #00bcd4);
   height: 80px;
   width: 100%;
 }
-/* .logo{ */
-/* 	background-image:url("logo.png"); */
-/* } */
+
 label.logo{
   
   color: white;
@@ -127,7 +125,7 @@ nav ul li a{
   
 }
 a.active,a:hover{
-  background: #1b9bff;
+  background: linear-gradient(135deg, #007bff, #00bcd4);
   transition: .5s;
 }
 .checkbtn{

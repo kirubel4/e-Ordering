@@ -43,12 +43,12 @@ if (cart_list != null) {
             border-radius: 25px;
         }
         .nav-link:hover {
-            background-color: #ffc107;
+            background: linear-gradient(135deg, #007bff, #00bcd4);
             color: #000;
             transform: translateY(-2px);
         }
         .nav-link.active {
-            background-color: #ffc107;
+            background: linear-gradient(135deg, #007bff, #00bcd4);
             color: #000;
         }
         
@@ -141,7 +141,7 @@ if (cart_list != null) {
             transform: translateY(-2px);
         }
         .card-header {
-            background-color: #ffc107;
+            background: linear-gradient(135deg, #007bff, #00bcd4);
             color: #000;
             font-weight: 600;
             padding: 15px;

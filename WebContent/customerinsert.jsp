@@ -38,15 +38,15 @@
 }
 
 .btn-dark {
-    background: linear-gradient(45deg, #1a1a1a, #333333) !important;
+    background: linear-gradient(135deg, #007bff, #00bcd4) !important;
     border: none !important;
     transition: all 0.3s ease !important;
 }
 
 .btn-dark:hover {
-    background: linear-gradient(45deg, #333333, #1a1a1a) !important;
+    background: linear-gradient(135deg, #0056b3, #008ba3) !important;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(0,123,255,0.4) !important;
 }
 
 .text-body {
