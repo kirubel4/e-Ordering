@@ -51,17 +51,7 @@ if (cart_list != null) {
             background-color: #ffc107;
             color: #000;
         }
-        .marquee {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            padding: 10px 0; /* Reduced padding */
-        }
-        .marquee img {
-            height: 100px; /* Reduced logo height */
-            margin-right: 50px;
-        }
+        
         .search-container {
             margin: 10px 0;
             text-align: center;
@@ -181,11 +171,6 @@ if (cart_list != null) {
 <body>
     <%@include file="/includes/navbar.jsp"%>
     
-    <div class="marquee">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="ASTU Logo">
-        <marquee behavior="scroll" direction="left">Not only food we provide, we also save your time and money! call us +251-953-775-288</marquee>
-    </div>
-
     <div class="search-container">
         <input type="text" class="search-input" id="search" placeholder="Search for products..." onkeyup="searchProducts()">
     </div>
