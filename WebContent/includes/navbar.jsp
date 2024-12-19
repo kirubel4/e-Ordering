@@ -3,13 +3,15 @@
         <!-- Logo and Brand Name -->
         <a class="navbar-brand d-flex align-items-center" href="index.jsp">
             <!-- Circular Logo -->
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="Logo" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
-            <h1 style="font-size: 1.5rem; margin: 0; white-space: nowrap;">Abc Order</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzPo9uv7MUCwwLTBVLgf29PIwG_Or3n2uVw&usqp=CAU" alt="Logo" class="rounded-circle" style="width: 70px; height: 70px; margin-right: 10px;">
+            <h1 style="font-size: 2.5rem; margin: 0; white-space: nowrap; font-family: 'Poppins', sans-serif; font-weight: 600; color: #343a40;">
+                Abc <span style="color: #ffc107;">Order</span>
+            </h1>
         </a>
         
         <!-- Marquee -->
         <div class="d-none d-lg-block" style="margin-left: 15px; flex-grow: 1; overflow: hidden;">
-            <marquee behavior="scroll" direction="left" style="font-size: 1rem; color: #555; white-space: nowrap; max-width: 400px;">
+            <marquee behavior="scroll" direction="left" style="font-size: 1.5rem; color: #555; white-space: nowrap; max-width: 400px;">
                 Order us, save your time!
             </marquee>
         </div>
@@ -44,3 +46,8 @@
         </div>
     </div>
 </nav>
+
+<!-- Include Google Fonts -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+</style>
