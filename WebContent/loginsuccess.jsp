@@ -9,10 +9,10 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-image: url('https://www.example.com/background.jpg'); /* Replace with your background image URL */
+            background-image: url('images/Injera_with_eight_kinds_of_stew.jpg');
             background-size: cover;
             background-position: center;
-            color: #fff;
+            color: #ffffff;
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -24,6 +24,7 @@
             align-items: center;
             height: 100%;
             text-align: center;
+            margin-top: -10px;
         }
 
         h1 {
@@ -31,19 +32,26 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             color: #ffffff;
         }
-
-        /* Optional: Adding a semi-transparent background to the text to enhance visibility */
         .message {
-            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
             padding: 20px;
             border-radius: 10px;
+        }
+        h1 {
+            color: #14b491;
+        }
+        p{
+            color: rgb(222, 231, 223);
+            font-size: x-large;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="message">
-            <h1>You have logged in successfully</h1>
+            <h1>Welcome Back!</h1>
+            <p>You have successfully logged in.</p>
+            
         </div>
     </div>
 </body>
