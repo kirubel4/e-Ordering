@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * ControllerServlet.java
+ * ProductServlet.java
  * This servlet acts as a page controller for the application, handling all
  * requests from the user.
  * 
