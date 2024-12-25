@@ -50,7 +50,7 @@
     <div class="container">
         <div class="message">
             <h1>Welcome Back!</h1>
-            <p>You have successfully logged in.</p>
+            <p>You have successfully logged in .</p>
             
         </div>
     </div>
